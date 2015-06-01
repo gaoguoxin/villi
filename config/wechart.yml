@@ -1,0 +1,35 @@
+---
+default:
+  appid: wx16343cb2c71e4c90
+  secret: 5f2c6fddb3824d439c7be9d177d209f5
+  token: villi2015wecharts
+  wxappid: 'wx16343cb2c71e4c90'
+  apikey: 'muqqxunwythkwfantfvyvkcyzsvielrw'
+  access_token: 
+  redirect_uri: http://wenjuanba.com/wecharts/wechart_auth
+production:
+  appid: wx16343cb2c71e4c90
+  secret: 5f2c6fddb3824d439c7be9d177d209f5
+  token: villi2015wecharts
+  wxappid: 'wx16343cb2c71e4c90'
+  apikey: 'muqqxunwythkwfantfvyvkcyzsvielrw'
+  access_token: 
+  redirect_uri: http://wenjuanba.com/wecharts/wechart_auth
+staging:
+  appid: wx16343cb2c71e4c90
+  secret: 5f2c6fddb3824d439c7be9d177d209f5
+  token: villi2015wecharts
+  mch_id: '1241798002'
+  wxappid: 'wx16343cb2c71e4c90'
+  apikey: 'muqqxunwythkwfantfvyvkcyzsvielrw'
+  access_token: 
+  redirect_uri: http://wenjuanba.com/wecharts/wechart_auth
+development:
+  appid: wx16343cb2c71e4c90
+  secret: 5f2c6fddb3824d439c7be9d177d209f5
+  token: villi2015wecharts
+  mch_id: '1241798002'
+  wxappid: 'wx16343cb2c71e4c90'
+  apikey: 'muqqxunwythkwfantfvyvkcyzsvielrw'
+  access_token: 
+  redirect_uri: http://wenjuanba.com/wecharts/wechart_auth
