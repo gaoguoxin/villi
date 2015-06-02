@@ -1,2 +1,19 @@
+<%content_for :head do %>
+  <script type='text/javascript'>
+    window.appid      = <%= raw (@sign_hash[:appid]).to_json %>;
+    window.noncestr   = <%= raw (@sign_hash[:noncestr]).to_json %>;    
+    window.timestamp  = <%= raw (@sign_hash[:timestamp]).to_json %>;
+    window.url        = <%= raw (@sign_hash[:url]).to_json %>;
+    window.signure    = <%= raw (@sign_hash[:signure]).to_json %>;
+    wx.config({
+        debug: true,
+        appId: window.appid,
+        timestamp: window.timestamp,
+        nonceStr: window.noncestr,
+        signature: window.signure,
+        jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage']
+    }) 
+  </script>
+<% end %>
 <a href="javascript:void(0);" class='products share share-friend'>分享给朋友</a>
 <a href="javascript:void(0);" class='products share share-quan'>分享到朋友圈</a>

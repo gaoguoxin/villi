@@ -130,7 +130,7 @@ class Wechart
     @url          = url
     string1       = "jsapi_ticket=#{@jsapi_ticket}&noncestr=#{@noncestr}&timestamp=#{@timestamp}&url=#{@url}"
     @signure      =  Digest::SHA1.hexdigest(string1)
-    return {appid:@appid,noncestr:@noncestr,jsapi_ticket:@jsapi_ticket,timestamp:@timestamp,url:@timestamp,signure:@signure}
+    return {appid:@appid,noncestr:@noncestr,jsapi_ticket:@jsapi_ticket,timestamp:@timestamp,url:@url,signure:@signure}
   end
 
   def self.newpass
