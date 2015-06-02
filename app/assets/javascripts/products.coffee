@@ -3,6 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $(->
 	$('a.share-friend').click(->
+		alert('11')
 		wx.onMenuShareAppMessage({
 			title:'测试分享到朋友',
 			desc:'这里是测试分享到朋友的描述信息。。。',
@@ -18,6 +19,7 @@ $(->
 
 
 	$('a.share-quan').click(->
+		alert(22)
 		wx.onMenuShareTimeline({
 			title:'测试分享到朋友圈',
 			link:'http://www.baidu.com',
