@@ -30,4 +30,23 @@ class WechartsController < ApplicationController
     end
 
 
+
+
+  	def generate_signure
+  		@appid        = Wechart.appid
+  		@noncestr     = newpass
+  		@jsapi_ticket = Wechart.jsapi_ticket
+  		@timestamp    = Time.now.to_i
+  		@url          = request.url
+  		string1       = "jsapi_ticket=#{@jsapi_ticket}&noncestr=#{@noncestr}&timestamp=#{@timestamp}&url=#{@url}"
+      	@signure      =  Digest::SHA1.hexdigest(string1)
+  	end
+
+    def newpass
+      chars = ("a".."z").to_a + ("A".."Z").to_a + ("0".."9").to_a
+      newpass = ""
+      1.upto(16) { |i| newpass << chars[rand(chars.size-1)] }
+      return newpass
+    end
+
 end

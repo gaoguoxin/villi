@@ -4,6 +4,7 @@ require 'net/http'
 require 'net/https'
 require 'yaml'
 require 'digest/md5'
+require 'digest/sha1'
 require 'nokogiri'
 class Wechart
 
@@ -118,6 +119,27 @@ class Wechart
     sign           = Digest::MD5.hexdigest(stringSignTemp).upcase
     return   sign 
   end
+
+
+
+  def self.generate_signure(url)
+    @appid        = self.appid
+    @noncestr     = newpass
+    @jsapi_ticket = self.jsapi_ticket
+    @timestamp    = Time.now.to_i
+    @url          = url
+    string1       = "jsapi_ticket=#{@jsapi_ticket}&noncestr=#{@noncestr}&timestamp=#{@timestamp}&url=#{@url}"
+    @signure      =  Digest::SHA1.hexdigest(string1)
+    return {appid:@appid,noncestr:@noncestr,jsapi_ticket:@jsapi_ticket,timestamp:@timestamp,url:@timestamp,signure:@signure}
+  end
+
+  def self.newpass
+    chars = ("a".."z").to_a + ("A".."Z").to_a + ("0".."9").to_a
+    newpass = ""
+    1.upto(16) { |i| newpass << chars[rand(chars.size-1)] }
+    return newpass
+  end
+
 
   def self.send_red_pack(order_code,openid,ip,total_amount,min_value,max_value)
     uri = "https://api.mch.weixin.qq.com/mmpaymkttransfers/sendredpack"
