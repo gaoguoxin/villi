@@ -6,7 +6,7 @@
     window.url        = <%= raw (@sign_hash[:url]).to_json %>;
     window.signure    = <%= raw (@sign_hash[:signure]).to_json %>;
     wx.config({
-        debug: true,
+        debug: false,
         appId: window.appid,
         timestamp: window.timestamp,
         nonceStr: window.noncestr,
