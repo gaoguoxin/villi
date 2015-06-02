@@ -3,6 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $(->
 	$('a.share-friend').click(->
+		alert('before called')
 		wx.onMenuShareAppMessage({
 			title:'测试分享到朋友',
 			desc:'这里是测试分享到朋友的描述信息。。。',
@@ -15,11 +16,13 @@ $(->
 				alert('分享后alert')
 			cancel:->
 				alert('分享取消alert')
-		})		
+		})
+		alert('after called')		
 	)
 
 
 	$('a.share-quan').click(->
+		alert('before called')
 		wx.onMenuShareTimeline({
 			title:'测试分享到朋友圈',
 			link:'http://www.baidu.com',
@@ -30,7 +33,8 @@ $(->
 				alert('分享后alert')
 			cancel:->
 				alert('分享取消alert')
-		})		
+		})	
+		alert('after called')	
 	)
 
 )
