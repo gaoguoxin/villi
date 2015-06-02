@@ -5,9 +5,6 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     @sign_hash = Wechart.generate_signure(request.url)
-    Rails.logger.info '=================================='
-    Rails.logger.info  sign_hash.inspect
-    Rails.logger.info '=================================='
   end
 
   # GET /products/1
